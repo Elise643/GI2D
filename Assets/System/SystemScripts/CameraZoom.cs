@@ -4,8 +4,8 @@ using UnityEngine;
 public class CameraZoom : MonoBehaviour
 {
     private Camera camera;
-    public float originalZoom = 10;
-    public float targetZoom = 10;
+    private float originalZoom = 15;
+    private float targetZoom = 15;
     private float refVelocity;
 
     [Tooltip("How smoothly the camera zooms in/out")]
