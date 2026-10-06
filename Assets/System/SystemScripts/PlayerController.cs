@@ -157,6 +157,7 @@ public class PlayerController : MonoBehaviour
             JumpButtonReleased();
         }
 
+
         CheckIfCrouching();
     }
 
@@ -512,14 +513,15 @@ public class PlayerController : MonoBehaviour
 
     // --------- Spawning ---------
 
-    public void Respawn()
+    public void Respawn(bool died = true)
     {
+        if (died){
         if (systemVariables.deathParticlePrefab != null)
         {
             GameObject.Instantiate(systemVariables.deathParticlePrefab, transform.position, Quaternion.identity);
         }
         StartCoroutine((ResetCameraCoroutine()));
-        PlaySfx(deathSound, 1);
+        PlaySfx(deathSound, 1);}
 
         if (currentSpawnPoint != null)
         {
